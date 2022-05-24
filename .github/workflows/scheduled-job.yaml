@@ -1,5 +1,7 @@
-name: Scheduled Job
 
+
+
+name: Scheduled Job
 on:
   schedule:
     - cron: "0 */12 * * *"
@@ -8,5 +10,11 @@ jobs:
   scheduled-job:
     runs-on: windows-latest
     steps:
-      - name: Execute Python script # Run the Testing3.py
-        run: python Testing3.py
+    
+    - name: Setup Python
+      uses: actions/setup-python@v3.1.2
+    
+    - name: Execute Python script # Run the Testing3.py
+      run: python Testing3.py
+
+
