@@ -10,15 +10,13 @@ jobs:
   scheduled-job:
     runs-on: windows-latest
     steps:
-    
-    - name: Setup Python
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v3   
     - uses: actions/setup-python@v3
-      
-    - name: install python packages
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+      with:
+        python-version: '3.9'
+        cache: 'pip'  
+    - run: pip install -r requirements.txt
+   
     
     - name: Execute Python script # Run the Testing3.py
       run: python Testing3.py
