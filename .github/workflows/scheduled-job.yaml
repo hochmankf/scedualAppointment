@@ -12,6 +12,7 @@ jobs:
     steps:
     
     - name: Setup Python
+      uses: actions/checkout@v3
       uses: actions/setup-python@v3.1.2
       
     - name: install python packages
